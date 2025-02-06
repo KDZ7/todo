@@ -1,0 +1,20 @@
+ros_domain_id: 0
+namespace: Null
+pkg_robot_description: "relaymd"
+robot_description: "description/rrbot/rrbot.urdf.xacro"
+display_on: "both" # rviz/gazebo/both
+use_sim_time: True
+
+rviz:
+  config: "rviz.yaml"
+
+gazebo:
+  mode: "both" # server/client/both
+  pkg_resource_path: "relaymd"
+  resource_path: "models/sdf/"
+  plugin_path: "models/plugins/"
+  library_path: "models/libs/"
+  world: "empty.world.sdf"
+  robot_name: "rrbot"
+  robot_position: [0, 0, 0, 0, 0, 0]
+  autorun: False

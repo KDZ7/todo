@@ -1,0 +1,11 @@
+# Build
+build/
+install/
+log/
+!EXT_PKG/
+
+# Cache and temp
+.*
+!.gitignore
+!.gitattributes
+
