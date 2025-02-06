@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(systempg)
+project(system_plug)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -10,6 +10,30 @@ find_package(ament_cmake REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
+find_package(hardware_interface REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(pluginlib REQUIRED)
+
+add_library(
+  ${PROJECT_NAME}
+  SHARED
+  src/RobotSystem.cpp
+)
+
+target_include_directories(
+  ${PROJECT_NAME}
+  PRIVATE
+  include/
+)
+
+ament_target_dependencies(
+  ${PROJECT_NAME}
+  hardware_interface
+  rclcpp
+  pluginlib
+)
+
+pluginlib_export_plugin_description_file(hardware_interface system_plug.xml)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

@@ -1,0 +1,17 @@
+<library path="system_plug">
+    <class
+        name="todo_system_plug/robot_system"
+        type="TODO_SYSTEM_PLUG::RobotSystem"
+        base_class_type="hardware_interface::SystemInterface">
+        <description>
+            TODO: Write a description for your system plugin.
+            _____________________________________________________________________________________
+            This plugin is a simple demonstration of general hardware interface for ROS2 Control.
+            _____________________________________________________________________________________
+        </description>
+        <parameters>
+            <!-- Add parameters here (if needed) -->
+        </parameters>
+    </class>
+
+</library>
