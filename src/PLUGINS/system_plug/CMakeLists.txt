@@ -35,6 +35,11 @@ ament_target_dependencies(
 
 pluginlib_export_plugin_description_file(hardware_interface system_plug.xml)
 
+install(
+  TARGETS ${PROJECT_NAME}
+  DESTINATION lib
+)
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights
